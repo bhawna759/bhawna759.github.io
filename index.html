@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bhawna Gupta · Product Manager — Data &amp; Analytics Products</title>
-<meta name="description" content="Bhawna Gupta — product-minded data and analytics leader. 17+ years owning data products end-to-end across US Healthcare, BFSI, Pharma, and Retail." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Bhawna Gupta · Manager — Data Analytics</title>
+<meta name="description" content="Bhawna Gupta — Manager, Data Analytics. 17+ years owning data, BI and analytics products end-to-end across US Healthcare, BFSI, Pharma, Oil & Gas and Retail, with applied advanced analytics and a growing AI/ML & Quantum foundation." />
 <style>
+  /* ============================================================
+     TYPOGRAPHY
+     Per brief: Arial everywhere. Content = 12pt, headers = 14pt.
+     Hero name + section titles kept at display sizes so the
+     layout reads as intended (easy to flatten to 14pt on request).
+     ============================================================ */
   :root{
     --paper:#f4eee2;
     --paper-2:#fbf7ee;
@@ -22,13 +25,16 @@
     --card:#fffdf8;
     --shadow:0 1px 2px rgba(28,24,18,.04),0 8px 30px rgba(28,24,18,.06);
     --shadow-lg:0 2px 4px rgba(28,24,18,.05),0 24px 60px rgba(28,24,18,.10);
-    --serif:"Fraunces",Georgia,serif;
-    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+    --font:Arial, Helvetica, "Segoe UI", sans-serif;
+
+    --fs-content:12pt;       /* body content */
+    --fs-header:14pt;        /* sub-headers / card titles */
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:var(--sans);
+    font-family:var(--font);
+    font-size:var(--fs-content);
     color:var(--ink);
     background:var(--paper);
     line-height:1.6;
@@ -54,43 +60,43 @@
     border-bottom:1px solid var(--line);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{font-family:var(--serif);font-weight:600;font-size:1.12rem;letter-spacing:.2px;display:flex;align-items:center;gap:.55rem}
+  .brand{font-weight:bold;font-size:var(--fs-header);letter-spacing:.2px;display:flex;align-items:center;gap:.55rem}
   .brand .mark{
     width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
-    background:var(--ink);color:var(--paper);font-size:.82rem;font-weight:700;font-family:var(--sans);letter-spacing:.5px;
+    background:var(--ink);color:var(--paper);font-size:.82rem;font-weight:bold;letter-spacing:.5px;
   }
-  .nav-links{display:flex;gap:30px;align-items:center}
-  .nav-links a{font-size:.82rem;font-weight:500;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:.78rem;font-weight:bold;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
   .nav-links a:hover{color:var(--accent)}
-  .nav-cta{padding:.5rem 1rem;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink)!important;text-transform:none!important;letter-spacing:0!important;font-weight:600!important;transition:all .2s}
+  .nav-cta{padding:.5rem 1rem;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink)!important;text-transform:none!important;letter-spacing:0!important;transition:all .2s}
   .nav-cta:hover{background:var(--ink);color:var(--paper)!important}
-  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+  @media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
 
   /* ---------- HERO ---------- */
-  header{position:relative;padding:clamp(70px,11vw,130px) 0 clamp(50px,7vw,80px)}
+  header{position:relative;padding:clamp(64px,10vw,118px) 0 clamp(46px,6vw,74px)}
   header::after{
     content:"";position:absolute;top:-120px;right:-160px;width:560px;height:560px;border-radius:50%;
     background:radial-gradient(circle,rgba(187,90,44,.16),transparent 62%);z-index:0;pointer-events:none;
   }
   .eyebrow{
-    display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:600;letter-spacing:.16em;
+    display:inline-flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:bold;letter-spacing:.16em;
     text-transform:uppercase;color:var(--accent-deep);margin-bottom:1.4rem;
   }
   .eyebrow::before{content:"";width:30px;height:1.5px;background:var(--accent)}
   h1{
-    font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.015em;
-    font-size:clamp(2.9rem,8vw,5.4rem);margin-bottom:.4rem;
+    font-family:var(--font);font-weight:bold;line-height:1.02;letter-spacing:-.015em;
+    font-size:clamp(2.7rem,8vw,4.9rem);margin-bottom:.4rem;
   }
-  h1 .last{color:var(--accent);font-style:italic;font-weight:400}
+  h1 .last{color:var(--accent)}
   .lede{
-    font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:400;
-    line-height:1.4;max-width:42ch;color:var(--ink-soft);margin:1.5rem 0 1.1rem;
+    font-size:clamp(1.15rem,2.4vw,1.55rem);font-weight:bold;
+    line-height:1.4;max-width:44ch;color:var(--ink-soft);margin:1.4rem 0 1rem;
   }
-  .sub{max-width:60ch;color:var(--muted);font-size:1.02rem;margin-bottom:2rem}
+  .sub{max-width:64ch;color:var(--muted);font-size:var(--fs-content);margin-bottom:1.9rem}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px}
   .btn{
-    display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.5rem;border-radius:999px;
-    font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;
+    display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.5rem;border-radius:999px;
+    font-weight:bold;font-size:var(--fs-content);transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;
   }
   .btn-primary{background:var(--ink);color:var(--paper);box-shadow:var(--shadow)}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
@@ -98,69 +104,105 @@
   .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
 
   .stats{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:clamp(40px,6vw,64px);
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:clamp(38px,6vw,60px);
     border-top:1px solid var(--line);padding-top:34px;
   }
-  .stat .n{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:600;line-height:1;color:var(--ink)}
-  .stat .l{font-size:.82rem;color:var(--muted);margin-top:.5rem;letter-spacing:.02em}
+  .stat .n{font-weight:bold;font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1;color:var(--ink)}
+  .stat .l{font-size:.84rem;color:var(--muted);margin-top:.5rem;letter-spacing:.02em}
   @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr);gap:26px 18px}}
 
   /* ---------- SECTION SHELL ---------- */
-  section{padding:clamp(56px,9vw,96px) 0;position:relative}
-  .sec-head{margin-bottom:clamp(34px,5vw,52px);max-width:60ch}
-  .kicker{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+  section{padding:clamp(54px,9vw,92px) 0;position:relative}
+  .sec-head{margin-bottom:clamp(32px,5vw,50px);max-width:62ch}
+  .kicker{font-size:.82rem;font-weight:bold;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
   .kicker::before{content:"";width:26px;height:1.5px;background:var(--accent)}
-  .sec-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.08;letter-spacing:-.01em}
-  .sec-intro{color:var(--muted);margin-top:.9rem;font-size:1.02rem}
+  .sec-title{font-weight:bold;font-size:clamp(1.7rem,4.2vw,2.6rem);line-height:1.1;letter-spacing:-.01em}
+  .sec-intro{color:var(--muted);margin-top:.85rem;font-size:var(--fs-content)}
 
   /* ---------- ABOUT ---------- */
   #about{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(34px,5vw,64px);align-items:start}
-  .about-grid p{color:var(--ink-soft);font-size:1.08rem;margin-bottom:1.1rem}
-  .about-grid p strong{color:var(--ink);font-weight:600}
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,62px);align-items:start}
+  .about-grid p{color:var(--ink-soft);font-size:var(--fs-content);margin-bottom:1.1rem}
+  .about-grid p strong{color:var(--ink);font-weight:bold}
   .about-aside{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
-  .about-aside h4{font-family:var(--serif);font-size:1.05rem;font-weight:600;margin-bottom:.4rem}
+  .about-aside h4{font-size:var(--fs-header);font-weight:bold;margin-bottom:.5rem}
   .about-aside .row{display:flex;gap:.7rem;padding:.7rem 0;border-bottom:1px dashed var(--line);font-size:.92rem;color:var(--ink-soft)}
   .about-aside .row:last-child{border-bottom:none}
-  .about-aside .row span:first-child{color:var(--accent-deep);font-weight:600;min-width:78px}
+  .about-aside .row span:first-child{color:var(--accent-deep);font-weight:bold;min-width:82px}
   @media(max-width:780px){.about-grid{grid-template-columns:1fr}}
 
-  /* ---------- APPROACH CARDS ---------- */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .card{
-    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);
-    transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden;
+  /* ---------- EXPERTISE CAROUSEL ---------- */
+  .carousel{position:relative}
+  .carousel-viewport{overflow:hidden;border-radius:20px}
+  .carousel-track{display:flex;transition:transform .5s cubic-bezier(.22,.7,.2,1)}
+  .slide{min-width:100%;padding:4px}
+  .slide-inner{
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:clamp(28px,5vw,52px);box-shadow:var(--shadow);min-height:300px;
+    display:flex;flex-direction:column;
   }
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cdbfa6}
-  .card .num{font-family:var(--serif);font-size:.95rem;color:var(--accent);font-weight:600;letter-spacing:.05em}
-  .card h3{font-family:var(--serif);font-weight:600;font-size:1.22rem;margin:.5rem 0 .55rem;line-height:1.2}
-  .card p{color:var(--muted);font-size:.95rem}
-  @media(max-width:860px){.cards{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.cards{grid-template-columns:1fr}}
+  .slide .idx{font-weight:bold;font-size:.85rem;color:var(--accent);letter-spacing:.18em}
+  .slide h3{font-weight:bold;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.15;margin:.7rem 0 .9rem;letter-spacing:-.01em}
+  .slide p{color:var(--ink-soft);font-size:var(--fs-content);max-width:64ch}
+  .slide .label{font-size:var(--fs-header);font-weight:bold;color:var(--teal);margin-bottom:.2rem}
+  .slide .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:22px}
+  .slide .tag{font-size:.8rem;font-weight:bold;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.34rem .75rem}
+
+  .carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:20px;gap:16px}
+  .dots{display:flex;gap:9px;flex-wrap:wrap}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:all .25s}
+  .dot[aria-selected="true"]{background:var(--accent);width:26px;border-radius:6px}
+  .arrows{display:flex;gap:10px}
+  .arrow{
+    width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);
+    color:var(--ink);font-size:1.1rem;cursor:pointer;display:grid;place-items:center;transition:all .2s;
+  }
+  .arrow:hover{border-color:var(--ink);background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+  .arrow:focus-visible,.dot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  /* ---------- GITHUB PROJECTS ---------- */
+  #projects{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .proj{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);
+    transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column;
+  }
+  .proj:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cdbfa6}
+  .proj .ptop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:.7rem}
+  .proj .repo{font-size:.76rem;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep)}
+  .proj .gh{color:var(--muted);flex-shrink:0}
+  .proj h3{font-size:var(--fs-header);font-weight:bold;line-height:1.25;margin-bottom:.5rem}
+  .proj p{color:var(--ink-soft);font-size:.95rem;flex:1}
+  .proj .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .proj .tag{font-size:.76rem;font-weight:bold;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.3rem .65rem}
+  .proj .star{font-size:.8rem;color:var(--accent-deep);font-weight:bold}
+  .proj-cta{margin-top:30px;text-align:center}
+  @media(max-width:880px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.proj-grid{grid-template-columns:1fr}}
 
   /* ---------- CASE STUDIES ---------- */
-  #work{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .case{
     background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow);
     transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;
   }
   .case:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-  .case .org{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep)}
-  .case h3{font-family:var(--serif);font-weight:600;font-size:1.4rem;line-height:1.18;margin:.5rem 0 .9rem}
+  .case .org{font-size:.78rem;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep)}
+  .case h3{font-weight:bold;font-size:var(--fs-header);line-height:1.25;margin:.5rem 0 .9rem}
   .case .block{font-size:.95rem;margin-bottom:.7rem}
-  .case .block b{color:var(--ink);font-weight:600;display:block;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.15rem;color:var(--teal)}
+  .case .block b{font-weight:bold;display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.15rem;color:var(--teal)}
   .case .block span{color:var(--ink-soft)}
   .outcome{
     margin-top:auto;background:linear-gradient(180deg,rgba(187,90,44,.06),rgba(187,90,44,.02));
     border:1px solid rgba(187,90,44,.22);border-radius:12px;padding:13px 15px;color:var(--accent-deep);
-    font-weight:600;font-size:.94rem;
+    font-weight:bold;font-size:.92rem;
   }
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-  .tag{font-size:.74rem;font-weight:600;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.32rem .7rem}
+  .tag{font-size:.76rem;font-weight:bold;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.3rem .68rem}
   @media(max-width:780px){.work-grid{grid-template-columns:1fr}}
 
   /* ---------- EXPERIENCE TIMELINE ---------- */
+  #experience{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .timeline{position:relative;margin-left:8px}
   .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
   .tl-item{position:relative;padding:0 0 30px 38px}
@@ -169,28 +211,29 @@
     content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;
     background:var(--paper);border:3px solid var(--accent);
   }
-  .tl-date{font-size:.8rem;font-weight:600;color:var(--accent-deep);letter-spacing:.03em}
-  .tl-role{font-family:var(--serif);font-size:1.18rem;font-weight:600;margin:.15rem 0 .1rem}
-  .tl-co{color:var(--ink-soft);font-size:.96rem}
+  .tl-date{font-size:.82rem;font-weight:bold;color:var(--accent-deep);letter-spacing:.03em}
+  .tl-role{font-size:var(--fs-header);font-weight:bold;margin:.15rem 0 .1rem}
+  .tl-co{color:var(--ink-soft);font-size:.95rem}
   .tl-note{color:var(--muted);font-size:.9rem;margin-top:.3rem}
 
   /* ---------- SKILLS ---------- */
-  #skills{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .skill-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
-  .skill-card h4{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:.95rem}
+  .skill-card h4{font-size:var(--fs-header);letter-spacing:.04em;color:var(--teal);font-weight:bold;margin-bottom:.95rem}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-size:.86rem;font-weight:500;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.4rem .75rem;color:var(--ink-soft)}
+  .chip{font-size:.88rem;font-weight:bold;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.4rem .75rem;color:var(--ink-soft)}
   .chip.learn{border-style:dashed;color:var(--muted)}
   @media(max-width:680px){.skill-grid{grid-template-columns:1fr}}
 
   /* ---------- CREDENTIALS ---------- */
+  #credentials{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px)}
-  .cred-col h4{font-family:var(--serif);font-size:1.2rem;font-weight:600;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:2px solid var(--line)}
+  .cred-col h4{font-size:var(--fs-header);font-weight:bold;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:2px solid var(--line)}
   .cred-item{padding:.65rem 0;border-bottom:1px dashed var(--line)}
   .cred-item:last-child{border-bottom:none}
-  .cred-item .t{font-weight:600;font-size:.98rem}
-  .cred-item .m{font-size:.85rem;color:var(--muted);margin-top:.1rem}
+  .cred-item .t{font-weight:bold;font-size:var(--fs-content)}
+  .cred-item .t .now{font-size:.72rem;font-weight:bold;color:#fff;background:var(--accent);border-radius:999px;padding:.12rem .55rem;margin-left:.5rem;letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
+  .cred-item .m{font-size:.86rem;color:var(--muted);margin-top:.1rem}
   @media(max-width:680px){.cred-grid{grid-template-columns:1fr}}
 
   /* ---------- CONTACT ---------- */
@@ -203,17 +246,21 @@
   .contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
   .contact-links a{
     display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.4rem;border-radius:12px;
-    border:1px solid rgba(255,255,255,.18);font-weight:600;font-size:.96rem;transition:all .2s;background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.18);font-weight:bold;font-size:var(--fs-content);transition:all .2s;background:rgba(255,255,255,.04);
   }
   .contact-links a:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
-  .contact-links a .lab{opacity:.6;font-weight:500;font-size:.8rem;display:block}
+  .contact-links a .lab{opacity:.6;font-weight:bold;font-size:.78rem;display:block}
 
-  footer{background:var(--ink);color:#9a9082;text-align:center;padding:30px 0;font-size:.85rem;border-top:1px solid rgba(255,255,255,.08)}
+  footer{background:var(--ink);color:#9a9082;text-align:center;padding:30px 0;font-size:.86rem;border-top:1px solid rgba(255,255,255,.08)}
 
   /* ---------- reveal animation ---------- */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+    .carousel-track{transition:none}
+  }
 </style>
 </head>
 <body>
@@ -223,7 +270,8 @@
     <a href="#top" class="brand"><span class="mark">BG</span> Bhawna Gupta</a>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#approach">Approach</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
       <a href="#work">Case Studies</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -234,12 +282,12 @@
 
 <header id="top">
   <div class="wrap">
-    <div class="eyebrow reveal">Product Manager · Data &amp; Analytics Products</div>
+    <div class="eyebrow reveal">Manager · Data Analytics</div>
     <h1 class="reveal">Bhawna <span class="last">Gupta</span></h1>
     <p class="lede reveal">I turn ambiguous business problems into measurable, customer-centric data products.</p>
-    <p class="sub reveal">17+ years owning data and analytics products end-to-end across US Healthcare, BFSI, Pharma, and Retail — shaping requirements with stakeholders, partnering with engineering and data science in Agile delivery, and measuring success through real business outcomes.</p>
+    <p class="sub reveal">17+ years owning data, BI and analytics products end-to-end across US Healthcare, BFSI, Pharma, Oil &amp; Gas and Retail — shaping requirements with stakeholders, defining the KPIs that matter, and delivering in Agile. I work day-to-day in data analytics and visualization, and bring an applied advanced-analytics and machine-learning lens to it. Currently pursuing an M.Tech in AI &amp; Data Science at IIT Patna while deepening my AI/ML and Quantum foundations.</p>
     <div class="cta-row reveal">
-      <a href="#work" class="btn btn-primary">View case studies →</a>
+      <a href="#projects" class="btn btn-primary">View projects →</a>
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
     </div>
     <div class="stats reveal">
@@ -255,40 +303,167 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="kicker">About</div>
-      <h2 class="sec-title">A product thinker, grounded in data and the customer.</h2>
+      <h2 class="sec-title">A data thinker, grounded in analytics and the customer.</h2>
     </div>
     <div class="about-grid">
       <div class="reveal">
         <p>I'm a data and analytics leader who has spent my career <strong>owning products end-to-end</strong> — sitting between business, engineering, and data-science teams to turn unclear, high-stakes problems into solutions people actually use.</p>
-        <p>Today I'm a <strong>Manager, Data Analytics at Optum (UnitedHealth Group)</strong>, where I drive delivery of BI and analytics products for US healthcare Providers and Payers. I shape requirements, define the KPIs that matter to each stakeholder group, run delivery through Agile and Scrum, and track success the only way that counts — <strong>revenue, efficiency, adoption, and time-to-market</strong>.</p>
-        <p>I keep the customer at the centre of every decision and I'm comfortable saying what I can and can't yet do — I'd rather be precise than impressive. I'm grounded in modern AI through formal certification and apply it pragmatically inside production analytics products, while continuing to deepen my product-tooling craft.</p>
+        <p>Today I'm a <strong>Manager, Data Analytics at Optum (UnitedHealth Group)</strong>, driving delivery of BI and analytics products for US healthcare Providers and Payers. I shape requirements, define the KPIs that matter to each stakeholder group, run delivery through Agile and Scrum, and track success the only way that counts — <strong>revenue, efficiency, adoption, and time-to-market</strong>.</p>
+        <p>My core craft is <strong>data analytics and visualization</strong>, built on years of <strong>advanced analytics</strong> — segmentation, forecasting, risk and marketing-mix models. I'm now deepening the AI/ML and Quantum side of that work through an <strong>M.Tech in AI &amp; Data Science at IIT Patna</strong> and hands-on projects, applying modern AI pragmatically inside production analytics rather than as a buzzword.</p>
       </div>
       <aside class="about-aside reveal">
         <h4>At a glance</h4>
         <div class="row"><span>Based in</span><span>Bangalore, India</span></div>
-        <div class="row"><span>Focus</span><span>Data &amp; analytics product management</span></div>
+        <div class="row"><span>Role</span><span>Manager, Data Analytics</span></div>
+        <div class="row"><span>Focus</span><span>Data analytics &amp; visualization</span></div>
         <div class="row"><span>Domains</span><span>Healthcare, BFSI, Pharma, Oil &amp; Gas, Retail</span></div>
+        <div class="row"><span>Studying</span><span>M.Tech, AI &amp; Data Science — IIT Patna</span></div>
         <div class="row"><span>Delivery</span><span>Agile &amp; Scrum, Rally</span></div>
-        <div class="row"><span>Strengths</span><span>Requirements, KPIs, stakeholder alignment, outcomes</span></div>
       </aside>
     </div>
   </div>
 </section>
 
-<section id="approach">
+<section id="expertise">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker">How I work</div>
-      <h2 class="sec-title">Product judgment, applied to messy real-world data.</h2>
-      <p class="sec-intro">The parts of the product craft I lean on most — built over years of shipping analytics products inside regulated, data-heavy environments.</p>
+      <div class="kicker">What I bring</div>
+      <h2 class="sec-title">Expertise.</h2>
+      <p class="sec-intro">From the analytics and visualization I do every day, out toward the AI/ML and Quantum foundations I'm actively building. Use the arrows, dots, swipe, or arrow keys.</p>
     </div>
-    <div class="cards">
-      <div class="card reveal"><div class="num">01</div><h3>Discovery &amp; requirements</h3><p>Translate ambiguous business needs into structured, testable requirements — and clear scope on what we're solving and why.</p></div>
-      <div class="card reveal"><div class="num">02</div><h3>KPI definition &amp; outcomes</h3><p>Define the metrics that matter for each stakeholder group, then hold the work accountable to revenue, efficiency, and adoption.</p></div>
-      <div class="card reveal"><div class="num">03</div><h3>Stakeholder alignment</h3><p>Keep business, engineering, data science, and sales aligned on scope, sequencing, and the value we're chasing.</p></div>
-      <div class="card reveal"><div class="num">04</div><h3>Delivery in Agile</h3><p>Run delivery through Scrum ceremonies and backlog management in Rally; currently building proficiency in Aha! and Figma with senior PM mentors.</p></div>
-      <div class="card reveal"><div class="num">05</div><h3>GTM enablement</h3><p>Equip sales and account teams with analytics that become recurring, credible talking points in front of customers.</p></div>
-      <div class="card reveal"><div class="num">06</div><h3>Domain depth</h3><p>Fluent in regulated, complex domains — US healthcare claims, credit risk, pharma marketing — so the product fits how the business actually runs.</p></div>
+
+    <div class="carousel reveal" id="carousel" tabindex="0" aria-roledescription="carousel" aria-label="Areas of expertise">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="track" aria-live="polite">
+
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
+            <div class="slide-inner">
+              <div class="idx">01</div>
+              <div class="label">Core craft</div>
+              <h3>Data analytics &amp; BI products</h3>
+              <p>Owning analytics and BI products from a vague business need to a shipped, adopted product. Discovery, requirements, KPI definition, delivery, and outcome measurement — held accountable to revenue, efficiency, and adoption rather than dashboards for their own sake.</p>
+              <div class="tags"><span class="tag">Power BI · DAX</span><span class="tag">SQL</span><span class="tag">Requirements</span><span class="tag">KPIs &amp; outcomes</span></div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
+            <div class="slide-inner">
+              <div class="idx">02</div>
+              <div class="label">Make it land</div>
+              <h3>Data visualization &amp; storytelling</h3>
+              <p>Turning complex, regulated data into visuals that decision-makers and sales teams actually use in the room. Flexible metric design in DAX, executive-ready storytelling, and benchmarking that becomes a recurring customer talking point.</p>
+              <div class="tags"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Benchmarking</span><span class="tag">Executive storytelling</span></div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
+            <div class="slide-inner">
+              <div class="idx">03</div>
+              <div class="label">Under the hood</div>
+              <h3>Advanced analytics &amp; machine learning</h3>
+              <p>Years of applied modelling behind the dashboards: RFM and clustering segmentation, regression, ensemble methods, time-series forecasting, marketing-mix models, and credit-risk and fraud-detection models across BFSI, Pharma, and Retail.</p>
+              <div class="tags"><span class="tag">Segmentation · RFM</span><span class="tag">Regression</span><span class="tag">Ensembles</span><span class="tag">Forecasting</span><span class="tag">Python · R · SAS</span></div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
+            <div class="slide-inner">
+              <div class="idx">04</div>
+              <div class="label">Applied &amp; pragmatic</div>
+              <h3>Applied AI &amp; Generative AI</h3>
+              <p>Bringing modern AI into analytics products with discipline — prompt engineering to make dashboards more self-serve, and working knowledge of RAG and LLM application patterns. Grounded by an OCI Generative AI professional certification and Azure AI Fundamentals.</p>
+              <div class="tags"><span class="tag">Prompt engineering</span><span class="tag">RAG &amp; LLM patterns</span><span class="tag">OCI GenAI Certified</span><span class="tag">Azure AI-900</span></div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
+            <div class="slide-inner">
+              <div class="idx">05</div>
+              <div class="label">Learning forward</div>
+              <h3>Quantum machine learning</h3>
+              <p>An emerging interest I'm exploring hands-on, not claiming as a day job. Completed IIT Delhi's Quantum Machine Learning program and experimented with convolution, pooling, and image-generation techniques on classic datasets — part of how I keep sharpening the ML foundations under my analytics work.</p>
+              <div class="tags"><span class="tag">QML — IIT Delhi</span><span class="tag">TensorFlow</span><span class="tag">CNN concepts</span><span class="tag">Exploring</span></div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
+            <div class="slide-inner">
+              <div class="idx">06</div>
+              <div class="label">How I deliver</div>
+              <h3>Product delivery &amp; stakeholder leadership</h3>
+              <p>Keeping business, engineering, data science, and sales aligned on scope, sequencing, and value. Scrum delivery and backlog management in Rally, GTM enablement, and mentoring analysts and data engineers — currently building proficiency in Aha! and Figma.</p>
+              <div class="tags"><span class="tag">Agile &amp; Scrum · Rally</span><span class="tag">Stakeholder alignment</span><span class="tag">GTM enablement</span><span class="tag">Mentoring</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <div class="dots" id="dots" role="tablist" aria-label="Choose expertise slide"></div>
+        <div class="arrows">
+          <button class="arrow" id="prev" aria-label="Previous slide">&#8592;</button>
+          <button class="arrow" id="next" aria-label="Next slide">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">From my GitHub</div>
+      <h2 class="sec-title">Projects &amp; proofs of concept.</h2>
+      <p class="sec-intro">Hands-on work where I stretch beyond the day job — machine learning, deep learning, credit-risk EDA, and data-for-good hackathons. Each links to the repository.</p>
+    </div>
+    <div class="proj-grid">
+
+      <a class="proj reveal" href="https://github.com/bhawna759/QRisers-Conspicious-QML" target="_blank" rel="noopener">
+        <div class="ptop"><span class="repo">QRisers-Conspicious-QML</span><span class="gh">&#9733;</span></div>
+        <h3>Quantum ML experiments on MNIST</h3>
+        <p>Explored convolution, pooling, and an image generator on the MNIST dataset using TensorFlow — practical experimentation alongside the IIT Delhi Quantum Machine Learning program.</p>
+        <div class="tags"><span class="tag">Quantum ML</span><span class="tag">TensorFlow</span><span class="tag">CNN</span></div>
+      </a>
+
+      <a class="proj reveal" href="https://github.com/bhawna759/Lending-club" target="_blank" rel="noopener">
+        <div class="ptop"><span class="repo">Lending-club</span></div>
+        <h3>Lending Club credit-risk EDA</h3>
+        <p>Exploratory data analysis on Lending Club loan data to understand the drivers of credit default risk — connecting my BFSI risk background to a hands-on Python analysis.</p>
+        <div class="tags"><span class="tag">Credit risk</span><span class="tag">Python · EDA</span><span class="tag">Jupyter</span></div>
+      </a>
+
+      <a class="proj reveal" href="https://github.com/bhawna759/Linear-Regression-Bike-sharing" target="_blank" rel="noopener">
+        <div class="ptop"><span class="repo">Linear-Regression-Bike-sharing</span></div>
+        <h3>Bike-sharing demand regression</h3>
+        <p>A linear-regression model predicting bike-sharing demand from seasonal and weather features — a clean walk-through of feature selection, assumptions, and model interpretation.</p>
+        <div class="tags"><span class="tag">Regression</span><span class="tag">Feature analysis</span><span class="tag">Python</span></div>
+      </a>
+
+      <a class="proj reveal" href="https://github.com/bhawna759/Reopening-of-super-spreader-businesses-and-risk-of-COVID-19-transmission-" target="_blank" rel="noopener">
+        <div class="ptop"><span class="repo">MIT Datathon</span><span class="star">Top 3</span></div>
+        <h3>Super-spreader reopening &amp; COVID-19 risk</h3>
+        <p>Top-3 winning entry at the MIT COVID-19 Datathon — modelling the transmission risk of reopening high-footfall businesses to inform safer public-health decisions.</p>
+        <div class="tags"><span class="tag">Data for good</span><span class="tag">MIT hackathon</span><span class="tag">Jupyter</span></div>
+      </a>
+
+      <a class="proj reveal" href="https://github.com/bhawna759/MIT_COVID-19_Datathon" target="_blank" rel="noopener">
+        <div class="ptop"><span class="repo">MIT_COVID-19_Datathon</span></div>
+        <h3>Prison-policy impact on COVID-19 spread</h3>
+        <p>Analysed how prison-population reduction policies affected COVID-19 infection rates in surrounding county populations — collaborative analysis under the 2020 MIT Datathon.</p>
+        <div class="tags"><span class="tag">Public health</span><span class="tag">Causal analysis</span><span class="tag">Python</span></div>
+      </a>
+
+      <a class="proj reveal" href="https://github.com/bhawna759/demo-deepdream" target="_blank" rel="noopener">
+        <div class="ptop"><span class="repo">demo-deepdream</span></div>
+        <h3>Deep Dream neural-net visualization</h3>
+        <p>A Streamlit demo of the Deep Dream technique, adapted from the TensorFlow tutorial — exploring how to make deep-learning model internals visible and interactive.</p>
+        <div class="tags"><span class="tag">Deep learning</span><span class="tag">TensorFlow</span><span class="tag">Streamlit</span></div>
+      </a>
+
+    </div>
+    <div class="proj-cta reveal">
+      <a class="btn btn-primary" href="https://github.com/bhawna759" target="_blank" rel="noopener">See all repositories on GitHub →</a>
     </div>
   </div>
 </section>
@@ -298,7 +473,7 @@
     <div class="sec-head reveal">
       <div class="kicker">Selected work</div>
       <h2 class="sec-title">Case studies from real assignments.</h2>
-      <p class="sec-intro">Each is a problem I owned — framed the way I think about products: the business need, what I did, and the outcome it drove.</p>
+      <p class="sec-intro">Each is a problem I owned — the business need, what I did, and the outcome it drove.</p>
     </div>
     <div class="work-grid">
 
@@ -318,15 +493,6 @@
         <div class="block"><b>What I did</b><span>Translated the business need into a benchmarking solution comparing organisations on key KPIs, designed around how sales actually use it in conversation.</span></div>
         <div class="outcome">Adopted by sales &amp; account teams as a recurring customer talking point</div>
         <div class="tags"><span class="tag">Healthcare</span><span class="tag">Benchmarking</span><span class="tag">Power BI</span></div>
-      </article>
-
-      <article class="case reveal">
-        <div class="org">UnitedHealth Group · Optum — US Healthcare</div>
-        <h3>Cross-sell &amp; claim-impact analytics</h3>
-        <div class="block"><b>Problem</b><span>The Product Sales team needed to target the right Providers, and Providers needed to reduce claim denial and downgrade rates.</span></div>
-        <div class="block"><b>What I did</b><span>Built quarter-on-quarter pipeline analytics for targeted cross-sell/up-sell, plus impact-and-opportunity analysis on claim submissions that fed back into product enhancements.</span></div>
-        <div class="outcome">Sharper sales targeting · lower denial/downgrade rates feeding the roadmap</div>
-        <div class="tags"><span class="tag">Healthcare</span><span class="tag">Pipeline analytics</span><span class="tag">SQL · Power BI</span></div>
       </article>
 
       <article class="case reveal">
@@ -357,21 +523,12 @@
       </article>
 
       <article class="case reveal">
-        <div class="org">EXL Services · DBS, Citi — BFSI</div>
-        <h3>Credit-card portfolio risk strategy</h3>
-        <div class="block"><b>Problem</b><span>Risk owners needed analyst insight turned into clear, actionable strategy across acquisition, line management, and portfolio performance.</span></div>
-        <div class="block"><b>What I did</b><span>Supported strategy across approve/decline, credit-line management, and portfolio performance; built reports and dashboards for the cards and unsecured-loans portfolios.</span></div>
-        <div class="outcome">~2% QoQ lift in booked accounts (pre-approved acquisition channel)</div>
+        <div class="org">EXL · DBS, Citi · Accenture · BofA — BFSI</div>
+        <h3>Credit risk &amp; cross-sell analytics</h3>
+        <div class="block"><b>Problem</b><span>Risk and sales owners needed analyst insight turned into clear, actionable strategy across acquisition, line management, and cross-sell.</span></div>
+        <div class="block"><b>What I did</b><span>Built credit-card portfolio risk strategy across approve/decline and credit-line management, plus cross-sell/up-sell and referral-programme analytics across lines of business.</span></div>
+        <div class="outcome">~2% QoQ lift in booked accounts · cost per acquisition reduced ~60%</div>
         <div class="tags"><span class="tag">BFSI</span><span class="tag">Credit risk</span><span class="tag">SAS suite</span></div>
-      </article>
-
-      <article class="case reveal">
-        <div class="org">Accenture · Bank of America — BFSI</div>
-        <h3>Cross-sell &amp; referral analytics</h3>
-        <div class="block"><b>Problem</b><span>The bank wanted higher cross-sell/up-sell across lines of business and a more efficient referral programme.</span></div>
-        <div class="block"><b>What I did</b><span>Built cross-sell/up-sell reporting across LOBs and designed a referral-programme analysis with insights and recommendations.</span></div>
-        <div class="outcome">Cost per acquisition reduced by ~60%</div>
-        <div class="tags"><span class="tag">BFSI</span><span class="tag">SAS</span><span class="tag">Referral analytics</span></div>
       </article>
 
     </div>
@@ -401,7 +558,7 @@
         <div class="tl-date">Jan 2017 — Mar 2018</div>
         <div class="tl-role">Module Lead — Advanced Analytics</div>
         <div class="tl-co">Tech Mahindra</div>
-        <div class="tl-note">Client: GSK — pharma portfolio marketing analytics.</div>
+        <div class="tl-note">Client: GSK — pharma portfolio marketing analytics &amp; marketing-mix modelling.</div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-date">Sep 2016 — Dec 2016</div>
@@ -419,7 +576,7 @@
         <div class="tl-date">Jan 2010 — Aug 2011</div>
         <div class="tl-role">Sr. Programmer</div>
         <div class="tl-co">Accenture</div>
-        <div class="tl-note">Bank of America — cross-sell / up-sell analytics.</div>
+        <div class="tl-note">Bank of America — cross-sell / up-sell &amp; referral analytics.</div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-date">Apr 2007 — Dec 2009</div>
@@ -446,28 +603,37 @@
     </div>
     <div class="skill-grid">
       <div class="skill-card reveal">
-        <h4>Product</h4>
-        <div class="chips">
-          <span class="chip">Requirements discovery</span><span class="chip">KPI definition</span>
-          <span class="chip">Stakeholder alignment</span><span class="chip">Roadmap shaping</span>
-          <span class="chip">Release planning</span><span class="chip">GTM enablement</span>
-          <span class="chip">Outcome measurement</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <h4>Delivery &amp; collaboration</h4>
-        <div class="chips">
-          <span class="chip">Agile &amp; Scrum</span><span class="chip">Rally</span>
-          <span class="chip">Cross-functional teams</span>
-          <span class="chip learn">Aha! (learning)</span><span class="chip learn">Figma (learning)</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
         <h4>Data &amp; analytics</h4>
         <div class="chips">
           <span class="chip">Power BI · DAX</span><span class="chip">Tableau</span>
           <span class="chip">SQL</span><span class="chip">Python</span>
           <span class="chip">R</span><span class="chip">SAS</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Advanced analytics &amp; ML</h4>
+        <div class="chips">
+          <span class="chip">RFM / clustering segmentation</span><span class="chip">Regression</span>
+          <span class="chip">Ensemble methods</span><span class="chip">Time-series forecasting</span>
+          <span class="chip">Marketing-mix &amp; risk models</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Product &amp; delivery</h4>
+        <div class="chips">
+          <span class="chip">Requirements discovery</span><span class="chip">KPI definition</span>
+          <span class="chip">Stakeholder alignment</span><span class="chip">Outcome measurement</span>
+          <span class="chip">Agile &amp; Scrum · Rally</span><span class="chip">GTM enablement</span>
+          <span class="chip learn">Aha! (learning)</span><span class="chip learn">Figma (learning)</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>AI &amp; emerging foundations</h4>
+        <div class="chips">
+          <span class="chip">Generative AI foundations</span><span class="chip">Prompt engineering</span>
+          <span class="chip">RAG &amp; LLM concepts</span>
+          <span class="chip learn">AI &amp; Data Science — M.Tech, IIT Patna</span>
+          <span class="chip learn">Quantum ML (exploring)</span>
         </div>
       </div>
       <div class="skill-card reveal">
@@ -477,17 +643,10 @@
         </div>
       </div>
       <div class="skill-card reveal">
-        <h4>Applied analytics</h4>
+        <h4>Domains</h4>
         <div class="chips">
-          <span class="chip">RFM / clustering segmentation</span><span class="chip">Regression</span>
-          <span class="chip">Ensemble methods</span><span class="chip">Time-series forecasting</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <h4>AI grounding</h4>
-        <div class="chips">
-          <span class="chip">Generative AI foundations</span><span class="chip">Prompt engineering</span>
-          <span class="chip">RAG &amp; LLM application concepts</span>
+          <span class="chip">US Healthcare</span><span class="chip">BFSI</span>
+          <span class="chip">Pharma</span><span class="chip">Oil &amp; Gas</span><span class="chip">Retail</span>
         </div>
       </div>
     </div>
@@ -503,6 +662,7 @@
     <div class="cred-grid">
       <div class="cred-col reveal">
         <h4>Education</h4>
+        <div class="cred-item"><div class="t">M.Tech — Artificial Intelligence &amp; Data Science<span class="now">In progress</span></div><div class="m">Indian Institute of Technology (IIT) Patna · pursuing</div></div>
         <div class="cred-item"><div class="t">Executive Program — Business Analytics &amp; Intelligence</div><div class="m">Indian Institute of Management Bangalore (IIMB) · 2011–2012</div></div>
         <div class="cred-item"><div class="t">Post Graduate Diploma — Operations Management</div><div class="m">Indira Gandhi National Open University</div></div>
         <div class="cred-item"><div class="t">B.Tech — Electronics &amp; Communication Engineering</div><div class="m">Punjab Technical University · 2003–2006</div></div>
@@ -524,23 +684,26 @@
     <div class="sec-head reveal">
       <div class="kicker">Contact</div>
       <h2 class="sec-title">Let's build products people actually use.</h2>
-      <p class="sec-intro">Open to AI &amp; data product manager conversations. The fastest way to reach me is email or LinkedIn.</p>
+      <p class="sec-intro">Open to data &amp; analytics conversations. The fastest way to reach me is email or LinkedIn.</p>
     </div>
     <div class="contact-links reveal">
       <a href="mailto:bhawnagupta.jobs@gmail.com"><span><span class="lab">Email</span>bhawnagupta.jobs@gmail.com</span></a>
       <a href="tel:+919901377760"><span><span class="lab">Phone</span>+91-9901377760</span></a>
       <a href="https://www.linkedin.com/in/bhawna-gupta-data-analysis" target="_blank" rel="noopener"><span><span class="lab">LinkedIn</span>bhawna-gupta-data-analysis</span></a>
+      <a href="https://github.com/bhawna759" target="_blank" rel="noopener"><span><span class="lab">GitHub</span>github.com/bhawna759</span></a>
       <a href="#top"><span><span class="lab">Based in</span>Bangalore, India</span></a>
     </div>
   </div>
 </section>
 
-<footer>© <span id="yr"></span> Bhawna Gupta · Product Manager — Data &amp; Analytics Products</footer>
+<footer>© <span id="yr"></span> Bhawna Gupta · Manager — Data Analytics</footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- scroll reveal ---------- */
   const io = new IntersectionObserver((entries)=>{
-    entries.forEach((e,i)=>{
+    entries.forEach((e)=>{
       if(e.isIntersecting){
         const els = [...e.target.parentElement.querySelectorAll('.reveal')];
         e.target.style.transitionDelay = Math.min(els.indexOf(e.target),6)*70 + 'ms';
@@ -550,6 +713,78 @@
     });
   },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* ---------- expertise carousel ---------- */
+  (function(){
+    const track = document.getElementById('track');
+    const slides = Array.from(track.children);
+    const dotsWrap = document.getElementById('dots');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const carousel = document.getElementById('carousel');
+    let index = 0;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // build dots
+    slides.forEach((_, i)=>{
+      const b = document.createElement('button');
+      b.className = 'dot';
+      b.setAttribute('role','tab');
+      b.setAttribute('aria-label','Go to slide ' + (i+1));
+      b.addEventListener('click', ()=>go(i, true));
+      dotsWrap.appendChild(b);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function go(i, user){
+      index = (i + slides.length) % slides.length;
+      track.style.transform = 'translateX(' + (-index*100) + '%)';
+      dots.forEach((d,di)=>d.setAttribute('aria-selected', di===index ? 'true':'false'));
+      slides.forEach((s,si)=>s.setAttribute('aria-hidden', si===index ? 'false':'true'));
+      if(user) restart();
+    }
+
+    prev.addEventListener('click', ()=>{ go(index-1, true); });
+    next.addEventListener('click', ()=>{ go(index+1, true); });
+
+    // keyboard (when carousel is focused)
+    carousel.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); go(index-1, true); }
+      if(e.key === 'ArrowRight'){ e.preventDefault(); go(index+1, true); }
+    });
+
+    // touch / swipe
+    let startX = 0, dragging = false;
+    track.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; dragging = true; }, {passive:true});
+    track.addEventListener('touchend', (e)=>{
+      if(!dragging) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if(Math.abs(dx) > 45){ go(index + (dx < 0 ? 1 : -1), true); }
+      dragging = false;
+    });
+
+    // auto-advance (paused on hover / focus / off-screen / reduced motion)
+    let timer = null;
+    function start(){
+      if(reduceMotion) return;
+      stop();
+      timer = setInterval(()=>go(index+1, false), 6000);
+    }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+    function restart(){ stop(); start(); }
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+
+    const visObs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=> en.isIntersecting ? start() : stop());
+    }, {threshold:.3});
+    visObs.observe(carousel);
+
+    go(0, false);
+  })();
 </script>
 </body>
 </html>
