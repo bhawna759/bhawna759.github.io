@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bhawna Gupta · AI &amp; Data Governance</title>
+<meta name="description" content="Bhawna Gupta — AI &amp; Data Governance and Responsible AI practitioner. Data analytics, visualization, and applied AI/ML proof-of-concepts." />
+<style>
+  /* ---------- Design tokens ----------
+     Brief: light background, Arial, 12px content / 14px section headers.
+     Palette kept calm and light; teal + indigo accents nod to data + quantum. */
+  :root{
+    --bg:        #F4F7F9;
+    --bg-tint:   #EAF1F4;
+    --surface:   #FFFFFF;
+    --ink:       #1B2A33;
+    --muted:     #5E6E78;
+    --line:      #DCE5EA;
+    --accent:    #0E7C86;   /* teal  — data / governance */
+    --accent-2:  #3B5BA9;   /* indigo — AI / quantum     */
+    --accent-soft:#E2F0F1;
+    --accent-soft-2:#E9EDF8;
+
+    --fs-body: 12px;        /* content  */
+    --fs-head: 14px;        /* headers  */
+    --fs-name: 30px;        /* hero name only — shrink to 14px for strict spec */
+
+    --maxw: 1040px;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(27,42,51,.05), 0 8px 24px rgba(27,42,51,.06);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--fs-body);
+    line-height:1.7;
+    color:var(--ink);
+    background:
+      radial-gradient(1100px 520px at 82% -10%, var(--accent-soft) 0%, transparent 60%),
+      radial-gradient(900px 460px at -5% 0%, var(--accent-soft-2) 0%, transparent 55%),
+      var(--bg);
+    background-attachment: fixed;
+  }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 22px; }
+
+  /* ---------- Section headers (14px per brief) ---------- */
+  .eyebrow{
+    font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--accent); font-weight:bold; margin:0 0 6px;
+  }
+  h2.section-title{
+    font-size:var(--fs-head); font-weight:bold; margin:0 0 4px; color:var(--ink);
+    letter-spacing:.01em;
+  }
+  .section{ padding:46px 0; }
+  .section + .section{ border-top:1px solid var(--line); }
+  .lead-line{ color:var(--muted); margin:0 0 26px; max-width:62ch; }
+
+  /* ---------- Top nav ---------- */
+  header.topbar{
+    position:sticky; top:0; z-index:30;
+    background:rgba(244,247,249,.82);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; height:52px; }
+  .brand{ font-weight:bold; letter-spacing:.02em; }
+  .brand span{ color:var(--accent); }
+  nav.menu{ display:flex; gap:18px; }
+  nav.menu a{ color:var(--muted); }
+  nav.menu a:hover{ color:var(--ink); text-decoration:none; }
+  @media (max-width:640px){ nav.menu{ display:none; } }
+
+  /* ---------- Hero ---------- */
+  .hero{ position:relative; overflow:hidden; }
+  .hero .wrap{ display:grid; grid-template-columns:1.4fr .9fr; gap:30px; align-items:center; padding-top:54px; padding-bottom:54px; }
+  .hero-name{ font-size:var(--fs-name); line-height:1.12; font-weight:bold; margin:0 0 8px; letter-spacing:-.01em; }
+  .hero-role{ font-size:var(--fs-head); font-weight:bold; color:var(--accent-2); margin:0 0 14px; }
+  .hero-sum{ color:var(--muted); max-width:56ch; margin:0 0 18px; }
+  .contact-row{ display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; }
+  .chip{
+    display:inline-flex; align-items:center; gap:7px;
+    background:var(--surface); border:1px solid var(--line); border-radius:999px;
+    padding:6px 12px; color:var(--ink); box-shadow:var(--shadow);
+  }
+  .chip:hover{ border-color:var(--accent); text-decoration:none; }
+  .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
+
+  /* Signature motif: quiet orbital / node graphic = data network + quantum state */
+  .hero-art{ position:relative; min-height:230px; }
+  .hero-art svg{ width:100%; height:auto; display:block; }
+  .orbit{ fill:none; stroke:var(--line); stroke-width:1; }
+  .node{ fill:var(--accent); }
+  .node.alt{ fill:var(--accent-2); }
+  .spark{ fill:none; stroke:var(--accent-2); stroke-width:1.2; stroke-dasharray:3 5; opacity:.7; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .rotor{ transform-origin:150px 130px; animation:spin 36s linear infinite; }
+  @media (prefers-reduced-motion:reduce){ .rotor{ animation:none; } }
+  @media (max-width:780px){
+    .hero .wrap{ grid-template-columns:1fr; }
+    .hero-art{ order:-1; min-height:150px; max-width:280px; }
+  }
+
+  .stat-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .stat{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:12px 16px; box-shadow:var(--shadow); flex:1 1 130px;
+  }
+  .stat b{ display:block; font-size:20px; color:var(--accent); line-height:1.1; }
+  .stat small{ color:var(--muted); }
+
+  /* ---------- Carousel (expertise — the signature interactive piece) ---------- */
+  .carousel{ position:relative; }
+  .viewport{ overflow:hidden; border-radius:var(--radius); }
+  .track{ display:flex; transition:transform .55s cubic-bezier(.22,.61,.36,1); }
+  @media (prefers-reduced-motion:reduce){ .track{ transition:none; } }
+  .slide{ min-width:100%; }
+  .slide-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 28px; box-shadow:var(--shadow);
+    display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:start;
+    min-height:182px;
+  }
+  .slide-icon{
+    width:54px; height:54px; border-radius:13px; display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--accent-soft),var(--accent-soft-2));
+    border:1px solid var(--line);
+  }
+  .slide-icon svg{ width:26px; height:26px; }
+  .slide-no{ font-size:11px; letter-spacing:.14em; color:var(--muted); text-transform:uppercase; margin:0 0 3px; }
+  .slide-title{ font-size:var(--fs-head); font-weight:bold; margin:0 0 8px; }
+  .slide-body{ color:var(--muted); margin:0 0 12px; max-width:64ch; }
+  .tagset{ display:flex; flex-wrap:wrap; gap:6px; }
+  .tag{
+    font-size:11px; background:var(--bg-tint); color:var(--ink);
+    border:1px solid var(--line); border-radius:6px; padding:3px 8px;
+  }
+
+  .car-controls{ display:flex; align-items:center; justify-content:space-between; margin-top:14px; }
+  .dots{ display:flex; gap:7px; }
+  .dots button{
+    width:8px; height:8px; padding:0; border:none; border-radius:50%;
+    background:var(--line); cursor:pointer; transition:all .25s;
+  }
+  .dots button[aria-selected="true"]{ background:var(--accent); width:22px; border-radius:999px; }
+  .arrows{ display:flex; gap:8px; }
+  .arrows button{
+    width:34px; height:34px; border-radius:9px; cursor:pointer;
+    background:var(--surface); border:1px solid var(--line); color:var(--ink);
+    display:grid; place-items:center; box-shadow:var(--shadow);
+  }
+  .arrows button:hover{ border-color:var(--accent); color:var(--accent); }
+  .arrows button:focus-visible, .dots button:focus-visible{ outline:2px solid var(--accent-2); outline-offset:2px; }
+  @media (max-width:560px){ .slide-card{ grid-template-columns:1fr; } .slide-icon{ display:none; } }
+
+  /* ---------- Projects / POC grid ---------- */
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:880px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .grid{ grid-template-columns:1fr; } }
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; box-shadow:var(--shadow); display:flex; flex-direction:column;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .card:hover{ transform:translateY(-3px); border-color:var(--accent); }
+  .card-flag{
+    align-self:flex-start; font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+    font-weight:bold; padding:3px 8px; border-radius:6px; margin-bottom:10px;
+  }
+  .flag-shipped{ background:var(--accent-soft); color:var(--accent); }
+  .flag-poc{ background:var(--accent-soft-2); color:var(--accent-2); }
+  .card h3{ font-size:var(--fs-head); margin:0 0 4px; }
+  .card .cli{ color:var(--muted); font-size:11px; margin:0 0 10px; }
+  .card p{ color:var(--ink); margin:0 0 14px; }
+  .card .res{ margin-top:auto; color:var(--accent); font-weight:bold; }
+  .card .tagset{ margin-top:12px; }
+
+  /* ---------- Experience timeline ---------- */
+  .tl{ position:relative; margin-top:8px; padding-left:22px; }
+  .tl::before{ content:""; position:absolute; left:5px; top:4px; bottom:4px; width:2px; background:var(--line); }
+  .tl-item{ position:relative; padding:0 0 22px; }
+  .tl-item::before{ content:""; position:absolute; left:-21px; top:5px; width:10px; height:10px; border-radius:50%; background:var(--surface); border:2px solid var(--accent); }
+  .tl-item h3{ font-size:var(--fs-head); margin:0; }
+  .tl-meta{ color:var(--muted); margin:1px 0 6px; }
+  .tl-item p{ margin:0; color:var(--ink); max-width:74ch; }
+
+  /* ---------- Skills + certs ---------- */
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  @media (max-width:760px){ .cols{ grid-template-columns:1fr; } }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+  .panel h3{ font-size:var(--fs-head); margin:0 0 12px; }
+  .kv{ margin:0 0 10px; }
+  .kv strong{ display:block; color:var(--accent-2); }
+  .kv span{ color:var(--muted); }
+  ul.clean{ list-style:none; margin:0; padding:0; }
+  ul.clean li{ padding:7px 0; border-top:1px solid var(--line); color:var(--ink); }
+  ul.clean li:first-child{ border-top:none; }
+
+  /* ---------- Footer ---------- */
+  footer.foot{ background:var(--bg-tint); border-top:1px solid var(--line); }
+  footer.foot .wrap{ padding:34px 22px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between; }
+  footer.foot .muted{ color:var(--muted); }
+
+  :focus-visible{ outline:2px solid var(--accent-2); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">Bhawna<span>.</span>Gupta</div>
+    <nav class="menu" aria-label="Section navigation">
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">AI &amp; Data Governance · Responsible AI</p>
+      <h1 class="hero-name">Bhawna Gupta</h1>
+      <p class="hero-role">Turning regulated data into trustworthy, governed AI products</p>
+      <p class="hero-sum">
+        18+ years across US Healthcare, BFSI, Pharma, Oil &amp; Gas and Retail — with the last few
+        years embedding responsible-AI and governance practices into AI-powered analytics. I set
+        evaluation criteria, quality gates and data-quality standards, and steward sensitive,
+        regulated data across its lifecycle. This page is a living portfolio: shipped analytics work
+        alongside hands-on proofs-of-concept as I deepen my AI/ML and Quantum skills.
+      </p>
+      <div class="contact-row">
+        <a class="chip" href="mailto:bhawnagupta.jobs@gmail.com"><span class="dot"></span>bhawnagupta.jobs@gmail.com</a>
+        <a class="chip" href="https://www.linkedin.com/in/bhawnagupta-data-analysis" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
+        <span class="chip"><span class="dot"></span>Bangalore, India</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat"><b>18+</b><small>years in analytics &amp; data</small></div>
+        <div class="stat"><b>~20%</b><small>revenue uplift, claims BI</small></div>
+        <div class="stat"><b>5</b><small>regulated domains</small></div>
+        <div class="stat"><b>4</b><small>AI/governance certs</small></div>
+      </div>
+    </div>
+
+    <!-- Signature motif: orbital network — data nodes + quantum states -->
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 300 260" role="img">
+        <g class="rotor">
+          <ellipse class="orbit" cx="150" cy="130" rx="120" ry="58"/>
+          <ellipse class="orbit" cx="150" cy="130" rx="84"  ry="110" transform="rotate(58 150 130)"/>
+          <ellipse class="orbit" cx="150" cy="130" rx="84"  ry="110" transform="rotate(-58 150 130)"/>
+          <circle class="node"     cx="270" cy="130" r="5"/>
+          <circle class="node alt" cx="92"  cy="40"  r="5"/>
+          <circle class="node alt" cx="208" cy="220" r="5"/>
+          <circle class="node"     cx="60"  cy="190" r="4"/>
+          <circle class="node"     cx="240" cy="55"  r="4"/>
+          <path class="spark" d="M92 40 L150 130 L208 220 M60 190 L150 130 L240 55"/>
+        </g>
+        <circle class="node alt" cx="150" cy="130" r="8"/>
+        <circle class="orbit" cx="150" cy="130" r="16"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE CAROUSEL ============ -->
+<section class="section" id="expertise">
+  <div class="wrap">
+    <p class="eyebrow">What I bring</p>
+    <h2 class="section-title">Areas of expertise</h2>
+    <p class="lead-line">Rooted in data analytics and visualization, extending into responsible AI, governance and applied machine learning. Use the arrows, dots, or keyboard arrows to browse.</p>
+
+    <div class="carousel" id="carousel">
+      <div class="viewport">
+        <div class="track" id="track" role="group" aria-roledescription="carousel" aria-label="Expertise areas">
+
+          <!-- 1 -->
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
+            <article class="slide-card">
+              <div class="slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0E7C86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <div>
+                <p class="slide-no">01 — Responsible AI</p>
+                <h3 class="slide-title">AI Governance &amp; Responsible AI</h3>
+                <p class="slide-body">Ethical-AI principles in practice — fairness, transparency, accountability and safety. I define responsible-use guardrails, evaluation and quality gates, and model-lifecycle oversight, with incremental, controlled rollout.</p>
+                <div class="tagset"><span class="tag">Eval &amp; quality gates</span><span class="tag">Risk assessment</span><span class="tag">Model-lifecycle oversight</span><span class="tag">Controlled rollout</span></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2 -->
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
+            <article class="slide-card">
+              <div class="slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3B5BA9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6c0-1.5 3.6-3 8-3s8 1.5 8 3-3.6 3-8 3-8-1.5-8-3z"/><path d="M4 6v12c0 1.5 3.6 3 8 3s8-1.5 8-3V6"/><path d="M4 12c0 1.5 3.6 3 8 3s8-1.5 8-3"/></svg>
+              </div>
+              <div>
+                <p class="slide-no">02 — Data Governance</p>
+                <h3 class="slide-title">Data Governance &amp; Quality</h3>
+                <p class="slide-body">Data-quality standards, governed KPI and metric definitions, and lineage/documentation awareness. Stewardship of sensitive, regulated data — healthcare claims, PHI-adjacent, and financial portfolios — across its lifecycle.</p>
+                <div class="tagset"><span class="tag">Governed KPIs</span><span class="tag">Data quality</span><span class="tag">Lineage</span><span class="tag">Sensitive-data stewardship</span></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- 3 -->
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
+            <article class="slide-card">
+              <div class="slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0E7C86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7"/><rect x="12" y="7" width="3" height="11"/><rect x="17" y="13" width="3" height="5"/></svg>
+              </div>
+              <div>
+                <p class="slide-no">03 — Core strength</p>
+                <h3 class="slide-title">Data Analytics &amp; Visualization</h3>
+                <p class="slide-body">End-to-end BI and analytics products — from messy source data to executive-ready, data-driven storytelling. Self-serve dashboards built on Power BI (DAX) and SQL, with consistent, auditable metrics teams can trust.</p>
+                <div class="tagset"><span class="tag">Power BI · DAX</span><span class="tag">SQL</span><span class="tag">KPI design</span><span class="tag">Executive storytelling</span></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- 4 -->
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
+            <article class="slide-card">
+              <div class="slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3B5BA9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+              </div>
+              <div>
+                <p class="slide-no">04 — Applied AI/ML</p>
+                <h3 class="slide-title">Advanced Analytics &amp; Machine Learning</h3>
+                <p class="slide-body">A practical ML track record — fraud-detection and pricing models, RFM segmentation, marketing-mix and credit-risk strategy. Increasingly applying prompt engineering responsibly to make analytics more self-serve.</p>
+                <div class="tagset"><span class="tag">Segmentation (RFM)</span><span class="tag">Model risk &amp; validation</span><span class="tag">Python · R · SAS</span><span class="tag">Prompt engineering</span></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- 5 -->
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
+            <article class="slide-card">
+              <div class="slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0E7C86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg>
+              </div>
+              <div>
+                <p class="slide-no">05 — Risk &amp; control</p>
+                <h3 class="slide-title">Risk &amp; Compliance</h3>
+                <p class="slide-body">Model risk and validation, credit/portfolio risk strategy, fraud-model deployment, and third-party/vendor risk and RFP assessment — with working knowledge of NIST AI RMF, ISO/IEC 42001, EU AI Act, GDPR and India's DPDPA.</p>
+                <div class="tagset"><span class="tag">NIST AI RMF</span><span class="tag">ISO/IEC 42001</span><span class="tag">EU AI Act · GDPR</span><span class="tag">Vendor risk</span></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- 6 -->
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
+            <article class="slide-card">
+              <div class="slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3B5BA9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4.5"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)"/></svg>
+              </div>
+              <div>
+                <p class="slide-no">06 — Learning edge</p>
+                <h3 class="slide-title">Quantum Machine Learning</h3>
+                <p class="slide-body">Actively upskilling — Quantum Machine Learning certificate (IIT Delhi) — exploring how quantum approaches map onto classical ML problems. Captured here as hands-on proofs-of-concept rather than production claims.</p>
+                <div class="tagset"><span class="tag">QML foundations</span><span class="tag">IIT Delhi cert</span><span class="tag">POC mindset</span></div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="car-controls">
+        <div class="dots" id="dots" role="tablist" aria-label="Choose expertise slide"></div>
+        <div class="arrows">
+          <button id="prev" aria-label="Previous expertise">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button id="next" aria-label="Next expertise">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS / POC ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <p class="eyebrow">Selected work &amp; proofs-of-concept</p>
+    <h2 class="section-title">Projects</h2>
+    <p class="lead-line">Shipped, outcome-backed analytics work alongside learning POCs in AI/ML and Quantum. POCs are clearly flagged — they show direction of travel, not production results.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <span class="card-flag flag-shipped">Shipped</span>
+        <h3>Claims Editing BI Portfolio</h3>
+        <p class="cli">UnitedHealth Group · Optum — Providers &amp; Payers</p>
+        <p>Owned end-to-end delivery of BI and analytics products for the Claims Editing portfolio, with new, standardised metrics and governed KPI definitions.</p>
+        <div class="res">~20% revenue uplift · 25% faster time-to-market</div>
+        <div class="tagset"><span class="tag">Power BI</span><span class="tag">Governed KPIs</span><span class="tag">US Healthcare</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-flag flag-shipped">Shipped</span>
+        <h3>Peer-to-Peer Provider Benchmarking</h3>
+        <p class="cli">UnitedHealth Group · Optum</p>
+        <p>Built a benchmarking solution comparing Provider organisations on consistent, auditable KPIs within a cohort — adopted by sales and account teams as a recurring customer talking point.</p>
+        <div class="res">Adopted across sales &amp; account teams</div>
+        <div class="tagset"><span class="tag">Benchmarking</span><span class="tag">Auditable KPIs</span><span class="tag">Cohort analysis</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-flag flag-shipped">Shipped</span>
+        <h3>Credit-Card Portfolio Risk Strategy</h3>
+        <p class="cli">EXL (Inductis) · DBS, Citi</p>
+        <p>Built risk strategy across acquisition (approve/decline), line management and portfolio performance — decision governance with model-informed risk controls.</p>
+        <div class="res">~2% QoQ lift in booked accounts</div>
+        <div class="tagset"><span class="tag">Credit risk</span><span class="tag">Decision analytics</span><span class="tag">BFSI</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-flag flag-shipped">Shipped</span>
+        <h3>Loyalty Consumer Analytics (360°)</h3>
+        <p class="cli">Epsilon · ExxonMobil</p>
+        <p>Owned a consumer-analytics data product with governed KPI definitions and RFM-based segmentation; analysed value-segment migration quarter-over-quarter to inform offer design.</p>
+        <div class="res">Documented, auditable segmentation logic</div>
+        <div class="tagset"><span class="tag">RFM segmentation</span><span class="tag">Retail</span><span class="tag">KPI governance</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-flag flag-poc">Learning POC</span>
+        <h3>Responsible-AI Evaluation Harness</h3>
+        <p class="cli">Self-directed · applied AI</p>
+        <p>A POC that wraps an LLM-assisted analytics feature with evaluation criteria, quality gates and responsible-use checks — turning governance principles into a repeatable, testable workflow.</p>
+        <div class="res">In progress — POC</div>
+        <div class="tagset"><span class="tag">Prompt engineering</span><span class="tag">Eval gates</span><span class="tag">Guardrails</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-flag flag-poc">Learning POC</span>
+        <h3>Quantum ML Explorations</h3>
+        <p class="cli">IIT Delhi QML certificate</p>
+        <p>Hands-on experiments mapping classical ML tasks (classification, optimisation) onto quantum approaches — building intuition for where quantum methods may add value.</p>
+        <div class="res">In progress — POC</div>
+        <div class="tagset"><span class="tag">QML</span><span class="tag">Optimisation</span><span class="tag">Experimentation</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <p class="eyebrow">18+ years</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <h3>Sr. Manager, Data Analytics</h3>
+        <p class="tl-meta">UnitedHealth Group — Optum Global Solutions · Jul 2020 – Present</p>
+        <p>AI-powered analytics products for Providers &amp; Payers. Define evaluation criteria, quality gates and responsible-use guardrails; steward sensitive US-healthcare data; own end-to-end BI delivery for the Claims Editing portfolio.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Data Analyst II</h3>
+        <p class="tl-meta">Epsilon · Client: ExxonMobil · Mar 2018 – Dec 2019</p>
+        <p>Loyalty-programme consumer analytics — governed KPI definitions and RFM-based value-attrition segmentation.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Module Lead — Advanced Analytics</h3>
+        <p class="tl-meta">Tech Mahindra · Client: GSK · Jan 2017 – Mar 2018</p>
+        <p>HIV-portfolio marketing analytics under strict data-handling controls; led analytics vendor selection (RFP) and shaped the evaluation framework; outputs informed a Marketing Mix Model.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Senior Consultant — Sales Enablement</h3>
+        <p class="tl-meta">LinkedIn · Sep 2016 – Dec 2016</p>
+        <p>Governed metrics for a sales-coaching dashboard (Goals vs Actuals); contributed to ~5% lift in monthly quota attainment.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Sr. Business Analyst — Decision Analytics</h3>
+        <p class="tl-meta">EXL Services (Inductis) · DBS, Citi · Jan 2013 – Nov 2014</p>
+        <p>Credit-card portfolio risk strategy across acquisition, line management and portfolio performance.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Earlier career</h3>
+        <p class="tl-meta">Accenture · TCS · Ozone Electronics · 2006 – 2011</p>
+        <p>Cross-sell/up-sell analytics, insurance fraud-detection and pricing models, and quality/predictive-maintenance models in manufacturing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS + CERTS ============ -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <p class="eyebrow">Toolkit &amp; credentials</p>
+    <h2 class="section-title">Skills &amp; certifications</h2>
+    <div class="cols">
+      <div class="panel">
+        <h3>Platforms &amp; data</h3>
+        <div class="kv"><strong>BI &amp; visualization</strong><span>Power BI (DAX), executive dashboards, KPI design</span></div>
+        <div class="kv"><strong>Languages &amp; analytics</strong><span>SQL, Python, R, SAS</span></div>
+        <div class="kv"><strong>Cloud &amp; data stores</strong><span>Azure (AI-900), Teradata, Oracle</span></div>
+        <div class="kv"><strong>Governance frameworks</strong><span>NIST AI RMF, ISO/IEC 42001, EU AI Act, GDPR, DPDPA</span></div>
+        <div class="kv"><strong>Domains</strong><span>US Healthcare, BFSI, Pharma, Oil &amp; Gas, Retail</span></div>
+      </div>
+      <div class="panel">
+        <h3>Certifications &amp; recognition</h3>
+        <ul class="clean">
+          <li>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional — includes Responsible AI foundations</li>
+          <li>Microsoft Certified: Azure AI Fundamentals (AI-900)</li>
+          <li>Quantum Machine Learning Certificate — IIT Delhi (Mar–Nov 2024)</li>
+          <li>Executive Program: Business Analytics &amp; Intelligence — IIM Bangalore</li>
+          <li>The Essence of Leadership — IIM Bangalore (IIMBx), 2024</li>
+          <li>Mentor for Women Entrepreneurs — IIMB Batch 2023 (Govt. of Karnataka)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div>
+      <strong>Let's talk AI &amp; Data Governance.</strong><br>
+      <span class="muted">Targeting AI &amp; Data Governance and Responsible AI roles.</span>
+    </div>
+    <div class="contact-row">
+      <a class="chip" href="mailto:bhawnagupta.jobs@gmail.com"><span class="dot"></span>Email</a>
+      <a class="chip" href="https://www.linkedin.com/in/bhawnagupta-data-analysis" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var track = document.getElementById('track');
+  var slides = Array.prototype.slice.call(track.children);
+  var dotsWrap = document.getElementById('dots');
+  var prev = document.getElementById('prev');
+  var next = document.getElementById('next');
+  var carousel = document.getElementById('carousel');
+  var index = 0;
+  var count = slides.length;
+  var timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Build dots
+  slides.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.setAttribute('role','tab');
+    b.setAttribute('aria-label','Go to slide ' + (i+1));
+    b.addEventListener('click', function(){ go(i); restart(); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function go(i){
+    index = (i + count) % count;
+    track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    dots.forEach(function(d, di){ d.setAttribute('aria-selected', di === index ? 'true' : 'false'); });
+  }
+
+  function start(){
+    if (reduce) return;
+    timer = setInterval(function(){ go(index + 1); }, 5500);
+  }
+  function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+  function restart(){ stop(); start(); }
+
+  prev.addEventListener('click', function(){ go(index - 1); restart(); });
+  next.addEventListener('click', function(){ go(index + 1); restart(); });
+
+  // Pause on hover / focus
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  // Keyboard arrows when carousel is focused
+  carousel.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft'){ go(index - 1); restart(); }
+    if (e.key === 'ArrowRight'){ go(index + 1); restart(); }
+  });
+  carousel.setAttribute('tabindex','0');
+
+  go(0);
+  start();
+})();
+</script>
+
+</body>
+</html>
