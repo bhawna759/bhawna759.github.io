@@ -1,2 +1,2 @@
-# .bhawna759.github.io
+# bhawna759.github.io
 My GitHub profile page
